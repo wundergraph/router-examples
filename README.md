@@ -54,15 +54,17 @@ Get up and running with a custom Cosmo Router in minutes. This guide walks you t
 
 ## 📁 Examples
 
-### Hello World
+### Simple Module Example
 
-A comprehensive example demonstrating how to:
+A comprehensive example demonstrating advanced router customization:
 
-- Create custom router modules
-- Handle GraphQL operations
-- Add request/response middleware
-- Configure modules via YAML
-- Access request context and logging
+- **Custom Module Creation**: Complete module implementation with configuration validation
+- **Request/Response Interceptors**: Handle both origin requests and responses
+- **GraphQL Operation Context**: Access operation details (name, type, hash, content)
+- **Middleware Chain**: Multiple middleware handlers with proper execution order
+- **Configuration Management**: YAML-based module configuration with validation
+- **Request Context**: Share data between handlers and access logging
+- **Header Manipulation**: Add custom headers to origin requests
 
 **Location:** [`examples/simple/`](examples/simple/)
 
@@ -71,9 +73,10 @@ A comprehensive example demonstrating how to:
 Each example includes:
 
 - `main.go` - Router entry point with module imports
-- `module.go` - Custom module implementation
-- `config.yaml` - Module configuration
+- `myModule/module.go` - Custom module implementation
+- `config.yaml` - Router & module configuration
 - `go.mod` - Go module dependencies
+- `Dockerfile` - Multi-arch container build configuration
 
 ## 📚 Documentation
 
