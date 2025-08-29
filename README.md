@@ -17,18 +17,9 @@ Get your custom Cosmo Router running in under 5 minutes! Choose your preferred a
 
 ## 📁 Examples
 
-Choose your example below.
-
-### Complete Module
-
-> **Path:** [`examples/complete/`](examples/complete/) | **[Documentation](examples/complete/README.md)**
-
-Comprehensive example showcasing advanced router customization:
-
-- Custom module creation with configuration validation
-- Request/response interceptors and middleware chains
-- GraphQL operation handling and context management
-- YAML-based configuration with live reloading
+| Example             | Path                                       | Documentation                            | Description                                                      |
+| ------------------- | ------------------------------------------ | ---------------------------------------- | ---------------------------------------------------------------- |
+| **Complete Module** | [`examples/complete/`](examples/complete/) | [📖 README](examples/complete/README.md) | Advanced router customization with custom modules and middleware |
 
 ## 🔄 Upgrade Router
 
