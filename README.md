@@ -25,8 +25,6 @@ Each example is a self-contained router configuration with a custom module. You 
 
 ## 🔄 Upgrade Router
 
-**Update to the latest version:**
-
 You can upgrade the router in each example directory by following the instructions below.
 
 1. Get the commit SHA from [releases page](https://github.com/wundergraph/cosmo/releases?q=router%40&expanded=false)
