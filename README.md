@@ -8,98 +8,105 @@
 
 <p align="center">
   <a href="https://cosmo-docs.wundergraph.com/router">Router Documentation</a> •
-  <a href="https://cosmo-docs.wundergraph.com/router/configuration">Router Configuration</a> •
-  <a href="https://cosmo-docs.wundergraph.com/getting-started/cosmo-cloud-onboarding">Cosmo Cloud Onboarding</a>
+  <a href="https://cosmo-docs.wundergraph.com/router/custom-modules">Module Configuration</a>
 </p>
 
 ## 🚀 Quick Start
 
-Get up and running with a custom Cosmo Router in minutes. This guide walks you through building and running a router with custom modules using Docker and connecting it to WunderGraph Cloud for configuration management. Each example can be copied and modified to create your own router.
+Get your custom Cosmo Router running in under 5 minutes! Choose your preferred approach below.
 
-1. **Clone the repository**
+### Prerequisites
 
-   ```bash
-   git clone https://github.com/wundergraph/router-examples.git
-   cd router-examples
-   ```
+```bash
+# Clone and navigate to the example
+git clone https://github.com/wundergraph/router-examples.git
+cd router-examples/examples/simple
+```
 
-2. **Navigate to an example**
+### Choose Your Method
 
-   ```bash
-   cd examples/simple
-   ```
+Next step is to build and run the router. You can run these commands in every example directory.
 
-3. **Build the Router**
+<details>
+<summary><strong>🐳 Docker (Recommended)</strong></summary>
 
-   ```bash
-   docker build \
-   --platform linux/amd64 \
-   --build-arg TARGETOS=linux \
-   --build-arg TARGETARCH=amd64 \
-   --build-arg VERSION=$(git describe --tags --always --dirty) \
-   --build-arg COMMIT=$(git rev-parse HEAD) \
-   --build-arg DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") \
-   -t myrouter:latest .
-   ```
+<br/>
 
-   The dockerfile is multi-arch, so it will build for the correct architecture for your machine.
-   If you want to build for a different architecture, you can replace `TARGETOS` and `TARGETARCH` with your operating system and architecture. For example, if you are on a Mac, you can use `darwin` and `arm64`.
+**Build the image:**
 
-4. **Run the Router**
+```bash
+docker build -t myrouter:latest .
+```
 
-   ```bash
-   docker run \
-   --name myrouter \
-   --rm \
-   -p 3002:3002 \
-   -e DEV_MODE=true \
-   -e DEMO_MODE=true \
-   -e LISTEN_ADDR=0.0.0.0:3002 \
-   myrouter:latest
-   ```
+**Run the router:**
 
-   Visit [http://localhost:3002/](http://localhost:3002/) to see the router in action.
+```bash
+docker run --name myrouter --rm -p 3002:3002 \
+  -e DEV_MODE=true \
+  -e DEMO_MODE=true \
+  -e LISTEN_ADDR=0.0.0.0:3002 \
+  myrouter:latest
+```
 
-   For everything beyond testing, you need to connect the router to WunderGraph Cloud. Please follow the [Cosmo Cloud Onboarding](https://cosmo-docs.wundergraph.com/getting-started/cosmo-cloud-onboarding) guide to get started.
+> 💡 **Multi-arch builds:** The Dockerfile supports multiple architectures. For custom builds, set `TARGETOS` and `TARGETARCH` (e.g., `darwin/arm64` for Mac M1).
+
+</details>
+
+<details>
+<summary><strong>Go Direct</strong></summary>
+
+<br/>
+
+**Requirements:** Go 1.24+
+
+**Install & Run:**
+
+```bash
+go mod download
+DEV_MODE=true DEMO_MODE=true LISTEN_ADDR=0.0.0.0:3002 go run main.go
+```
+
+</details>
+
+---
+
+### Test Your Router
+
+Visit **[localhost:3002](http://localhost:3002)** to see your router in action!
+
+**Next Steps:** Connect to [WunderGraph Cloud](https://cosmo-docs.wundergraph.com/getting-started/cosmo-cloud-onboarding) for production configuration.
 
 ## 📁 Examples
 
-### Simple Module Example
+### Simple Module
 
-A comprehensive example demonstrating custom modules, middleware, and GraphQL operation handling.
+> **Path:** [`examples/simple/`](examples/simple/) | **[Documentation](examples/simple/README.md)**
 
-**Features**: Custom module creation, request/response interceptors, configuration management, and more.
+Comprehensive example showcasing advanced router customization:
 
-**Location**: [`examples/simple/`](examples/simple/) - [View detailed documentation](examples/simple/README.md)
+- Custom module creation with configuration validation
+- Request/response interceptors and middleware chains
+- GraphQL operation handling and context management
+- YAML-based configuration with live reloading
 
-## 📚 Documentation
+## 🔄 Upgrade Router
 
-For comprehensive router documentation and configuration options, visit:
+**Update to the latest version:**
 
-- [Cosmo Router Documentation](https://cosmo-docs.wundergraph.com/router)
-- [Router Configuration Reference](https://cosmo-docs.wundergraph.com/router/configuration)
-
-## 🔄 Upgrade
-
-To upgrade to the latest router version:
-
-1. Visit the [Cosmo Router releases page](https://github.com/wundergraph/cosmo/releases?q=router%40&expanded=false)
-2. Copy the commit SHA from your desired release
-3. **Navigate to your router directory** (where `go.mod` is located):
+1. Get the commit SHA from [releases page](https://github.com/wundergraph/cosmo/releases?q=router%40&expanded=false)
+2. Navigate to your router directory (where `go.mod` exists)
+3. Update dependencies:
    ```bash
-   cd examples/simple  # or your specific example directory
-   ```
-4. **Update your dependencies**:
-   ```bash
+   cd examples/simple  # your example directory
    go get github.com/wundergraph/cosmo/router@<commit-sha>
    ```
 
-> ⚠️ **Important:** Always run the `go get` command from within the directory containing your `go.mod` file.
+> ⚠️ **Important:** Run `go get` from the directory containing `go.mod`
 
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit examples, improvements, and bug fixes.
 
-## 📄 License
+## License
 
 Cosmo is licensed under the [Apache License, Version 2.0](LICENSE).
