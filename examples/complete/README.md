@@ -29,9 +29,9 @@ A comprehensive example demonstrating advanced Cosmo Router customization with c
 
 Copy the example directory to your own repository.
 
-### Choose Your Method
+### Build and Run
 
-Next step is to build and run the router. You can run these commands in every example directory.
+Next step is to build and run the router. Choose your preferred method below.
 
 <details>
 <summary><strong>🐳 Docker (Recommended)</strong></summary>
