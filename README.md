@@ -19,7 +19,7 @@ Get up and running with a custom Cosmo Router in minutes. This guide walks you t
    cd examples/simple
    ```
 
-3. **Build the router**
+3. **Build the Router**
 
    ```bash
    docker build \
@@ -35,25 +35,22 @@ Get up and running with a custom Cosmo Router in minutes. This guide walks you t
    The dockerfile is multi-arch, so it will build for the correct architecture for your machine.
    If you want to build for a different architecture, you can replace `TARGETOS` and `TARGETARCH` with your operating system and architecture. For example, if you are on a Mac, you can use `darwin` and `arm64`.
 
-4. **Run the router**
-
-   After following the [Cosmo Cloud Onboarding](https://cosmo-docs.wundergraph.com/getting-started/cosmo-cloud-onboarding) guide, you generated a `GRAPH_API_TOKEN` that you pass to the router as an environment variable. This will download the execution configuration from the WunderGraph Cloud.
+4. **Run the Router**
 
    ```bash
    docker run \
-   --name cosmo-router \
+   --name myrouter \
    --rm \
    -p 3002:3002 \
-   --add-host=host.docker.internal:host-gateway \
-   --pull always \
    -e DEV_MODE=true \
    -e DEMO_MODE=true \
    -e LISTEN_ADDR=0.0.0.0:3002 \
-   -e GRAPH_API_TOKEN=<graph-api-token> \
-   ghcr.io/wundergraph/cosmo/router:latest
+   myrouter:latest
    ```
 
    Visit [http://localhost:3002/](http://localhost:3002/) to see the router in action.
+
+   For everything beyond testing, you need to connect the router to WunderGraph Cloud. Please follow the [Cosmo Cloud Onboarding](https://cosmo-docs.wundergraph.com/getting-started/cosmo-cloud-onboarding) guide to get started.
 
 ## 📁 Examples
 
