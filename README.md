@@ -1,6 +1,16 @@
-# Router Examples
+<p align="center">
+  <a href="https://github.com/wundergraph/router-examples">
+    <img src="img.png" width="500px" alt="gRPC Plugin Demo" />
+  </a>
+</p>
 
-Customizable examples for extending the [Cosmo Router](https://github.com/wundergraph/cosmo) with custom modules and middleware.
+<p align="center">Customizable examples for extending the Cosmo Router with custom modules and middleware.</p>
+
+<p align="center">
+  <a href="https://cosmo-docs.wundergraph.com/router">Router Documentation</a> •
+  <a href="https://cosmo-docs.wundergraph.com/router/configuration">Router Configuration</a> •
+  <a href="https://cosmo-docs.wundergraph.com/getting-started/cosmo-cloud-onboarding">Cosmo Cloud Onboarding</a>
+</p>
 
 ## 🚀 Quick Start
 
@@ -56,27 +66,11 @@ Get up and running with a custom Cosmo Router in minutes. This guide walks you t
 
 ### Simple Module Example
 
-A comprehensive example demonstrating advanced router customization:
+A comprehensive example demonstrating custom modules, middleware, and GraphQL operation handling.
 
-- **Custom Module Creation**: Complete module implementation with configuration validation
-- **Request/Response Interceptors**: Handle both origin requests and responses
-- **GraphQL Operation Context**: Access operation details (name, type, hash, content)
-- **Middleware Chain**: Multiple middleware handlers with proper execution order
-- **Configuration Management**: YAML-based module configuration with validation
-- **Request Context**: Share data between handlers and access logging
-- **Header Manipulation**: Add custom headers to origin requests
+**Features**: Custom module creation, request/response interceptors, configuration management, and more.
 
-**Location:** [`examples/simple/`](examples/simple/)
-
-## 🔧 Creating Your Own Module
-
-Each example includes:
-
-- `main.go` - Router entry point with module imports
-- `myModule/module.go` - Custom module implementation
-- `config.yaml` - Router & module configuration
-- `go.mod` - Go module dependencies
-- `Dockerfile` - Multi-arch container build configuration
+**Location**: [`examples/simple/`](examples/simple/) - [View detailed documentation](examples/simple/README.md)
 
 ## 📚 Documentation
 
