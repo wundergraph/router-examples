@@ -17,6 +17,8 @@ Get your custom Cosmo Router running in under 5 minutes! Choose your preferred a
 
 ## 📁 Examples
 
+Each example is a self-contained router configuration with a custom module. You can copy the example directory to your own repository and start customizing it.
+
 | Example             | Path                                       | Documentation                            | Description                                                      |
 | ------------------- | ------------------------------------------ | ---------------------------------------- | ---------------------------------------------------------------- |
 | **Complete Module** | [`examples/complete/`](examples/complete/) | [📖 README](examples/complete/README.md) | Advanced router customization with custom modules and middleware |
