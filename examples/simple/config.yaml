@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/wundergraph/cosmo/main/router/pkg/config/config.schema.json
+
+# This is a simple example of a config file for the router.
+# It demonstrates how to use the different handlers to customize the router.
+# It also shows how to use the config file to configure and validate your module config.
+# By default, the config file is located at `config.yaml` in the working directory of the router.
+
+# See https://cosmo-docs.wundergraph.com/router/configuration for the full list of configuration options.
+
+version: "1"
+
+# Never insert secrets in plain text in the config file. Use environment variables instead.
+
+modules:
+  myModule:
+    value: 10
