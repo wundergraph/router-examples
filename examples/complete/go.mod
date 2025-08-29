@@ -1,4 +1,4 @@
-module github.com/wundergraph/router-examples/simple
+module github.com/wundergraph/router-examples/complete
 
 go 1.24.5
 
