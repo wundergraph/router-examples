@@ -8,6 +8,11 @@ import (
 	"go.uber.org/zap"
 )
 
+func init() {
+	// Register your module here
+	core.RegisterModule(&MyModule{})
+}
+
 const myModuleID = "myModule"
 
 // MyModule demonstrates GraphQL operation access and header manipulation across different router handlers.
@@ -76,6 +81,15 @@ func (m *MyModule) Middleware(ctx core.RequestContext, next http.Handler) {
 		operation.Hash(),
 		operation.Content(),
 	)
+
+	//
+	// Return a GraphQL error response to the client.
+	//
+	// Never write errors directly to the http.ResponseWriter
+	// because they will not be logged and tracked in the telemetry system.
+	// or rendered as a GraphQL error response.
+	//
+	core.WriteResponseError(ctx, fmt.Errorf("test error"))
 
 	next.ServeHTTP(ctx.ResponseWriter(), ctx.Request())
 }
