@@ -89,7 +89,7 @@ func (m *MyModule) Middleware(ctx core.RequestContext, next http.Handler) {
 	// because they will not be logged and tracked in the telemetry system.
 	// or rendered as a GraphQL error response.
 	//
-	core.WriteResponseError(ctx, fmt.Errorf("test error"))
+	//core.WriteResponseError(ctx, fmt.Errorf("test error"))
 
 	next.ServeHTTP(ctx.ResponseWriter(), ctx.Request())
 }
