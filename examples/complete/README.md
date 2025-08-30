@@ -41,7 +41,14 @@ Next step is to build and run the router. Choose your preferred method below.
 **Build the image:**
 
 ```bash
-docker build -t myrouter:latest .
+docker build \
+  --platform linux/amd64 \
+  --build-arg TARGETOS=linux \
+  --build-arg TARGETARCH=amd64 \
+  --build-arg VERSION=$(git describe --tags --always --dirty) \
+  --build-arg COMMIT=$(git rev-parse HEAD) \
+  --build-arg DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") \
+  -t myrouter:latest .
 ```
 
 **Run the router:**
