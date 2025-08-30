@@ -48,8 +48,6 @@ docker build -t myrouter:latest .
 
 ```bash
 docker run --name myrouter --rm -p 3002:3002 \
-  -e DEV_MODE=true \
-  -e DEMO_MODE=true \
   -e LISTEN_ADDR=0.0.0.0:3002 \
   myrouter:latest
 ```
@@ -69,7 +67,7 @@ docker run --name myrouter --rm -p 3002:3002 \
 
 ```bash
 go mod download
-DEV_MODE=true DEMO_MODE=true LISTEN_ADDR=0.0.0.0:3002 go run main.go
+go run main.go
 ```
 
 </details>
