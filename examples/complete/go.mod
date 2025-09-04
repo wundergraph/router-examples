@@ -1,6 +1,6 @@
 module github.com/wundergraph/router-examples/complete
 
-go 1.24.5
+go 1.25
 
 require (
 	github.com/wundergraph/cosmo/router v0.0.0-20250828121821-5b323e7090c6 // 0.247.0
