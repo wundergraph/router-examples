@@ -63,11 +63,11 @@ Visit **[localhost:3002](http://localhost:3002)** to see your router in action!
 </details>
 
 <details>
-<summary><strong>Go Binary (Requires Go 1.24+)</strong></summary>
+<summary><strong>Go Binary (Requires Go 1.25+)</strong></summary>
 
 <br/>
 
-**Requirements:** Go 1.24+
+**Requirements:** Go 1.25+
 
 **Build & Run:**
 
