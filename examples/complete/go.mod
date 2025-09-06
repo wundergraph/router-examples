@@ -1,9 +1,9 @@
 module github.com/wundergraph/router-examples/complete
 
-go 1.24.5
+go 1.25
 
 require (
-	github.com/wundergraph/cosmo/router v0.0.0-20250828121821-5b323e7090c6 // 0.247.0
+	github.com/wundergraph/cosmo/router v0.0.0-20250906085108-02740f2856b2 // 0.250.0
 	go.uber.org/zap v1.27.0
 )
 
@@ -123,7 +123,7 @@ require (
 	github.com/vbatts/tar-split v0.12.1 // indirect
 	github.com/wk8/go-ordered-map/v2 v2.1.8 // indirect
 	github.com/wundergraph/astjson v0.0.0-20250106123708-be463c97e083 // indirect
-	github.com/wundergraph/graphql-go-tools/v2 v2.0.0-rc.223 // indirect
+	github.com/wundergraph/graphql-go-tools/v2 v2.0.0-rc.224 // indirect
 	github.com/yosida95/uritemplate/v3 v3.0.2 // indirect
 	github.com/yusufpapurcu/wmi v1.2.4 // indirect
 	go.opentelemetry.io/auto/sdk v1.1.0 // indirect
