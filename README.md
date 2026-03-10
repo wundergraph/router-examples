@@ -94,12 +94,13 @@ You can upgrade the router in each example directory by following the instructio
 
 1. Get the commit SHA from [releases page](https://github.com/wundergraph/cosmo/releases?q=router%40&expanded=false)
 2. Navigate to your router directory (where `go.mod` exists)
-3. Update dependencies:
+3. Copy the `replace` directives from [`examples/complete/go.mod`](examples/complete/go.mod) into your `go.mod`
+4. Update dependencies:
    ```bash
    cd examples/complete  # your example directory
    go get github.com/wundergraph/cosmo/router@<commit-sha>
    ```
-4. Run `go get` from the directory containing `go.mod`
+5. Run `go get` from the directory containing `go.mod`
 
 > [!CAUTION]
 You **must** keep the `replace` directives in your `go.mod` to pin the dependency versions used by the router. We cannot guarantee compatibility in custom setups that omit these replacements. See [`examples/complete/go.mod`](examples/complete/go.mod) for the required `replace` block.
