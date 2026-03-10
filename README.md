@@ -103,6 +103,9 @@ You can upgrade the router in each example directory by following the instructio
 > [!NOTE]
 > Run `go get` from the directory containing `go.mod`
 
+> [!CRITICAL]
+> You **must** keep the `replace` directives in your `go.mod` to pin the dependency versions used by the router. We cannot guarantee compatibility in custom setups that omit these replacements. See [`examples/complete/go.mod`](examples/complete/go.mod) for the required `replace` block.
+
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit examples, improvements, and bug fixes.
