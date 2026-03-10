@@ -99,12 +99,10 @@ You can upgrade the router in each example directory by following the instructio
    cd examples/complete  # your example directory
    go get github.com/wundergraph/cosmo/router@<commit-sha>
    ```
+4. Run `go get` from the directory containing `go.mod`
 
-> [!NOTE]
-> Run `go get` from the directory containing `go.mod`
-
-> [!CRITICAL]
-> You **must** keep the `replace` directives in your `go.mod` to pin the dependency versions used by the router. We cannot guarantee compatibility in custom setups that omit these replacements. See [`examples/complete/go.mod`](examples/complete/go.mod) for the required `replace` block.
+> [!CAUTION]
+You **must** keep the `replace` directives in your `go.mod` to pin the dependency versions used by the router. We cannot guarantee compatibility in custom setups that omit these replacements. See [`examples/complete/go.mod`](examples/complete/go.mod) for the required `replace` block.
 
 ## 🤝 Contributing
 
